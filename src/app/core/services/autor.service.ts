@@ -1,17 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { PostModel } from '../models/post.model';
-
-import { map } from 'rxjs/operators';
+import { UserModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PostService {
+export class AutorService {
   constructor(private http: HttpClient) {}
 
   getAll() {
-    return this.http.get<PostModel[]>(`${environment.apiUrl}posts`);
+    return this.http.get<UserModel[]>(`${environment.apiUrl}users`);
   }
 }

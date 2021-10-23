@@ -11,30 +11,30 @@
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
-      <!-- ID Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
-        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-      </ng-container>
-
       <!-- Progress Column -->
-      <ng-container matColumnDef="progress">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Correo</th>
-        <td mat-cell *matCellDef="let row">{{ row.progress }}%</td>
+      <ng-container matColumnDef="autor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
+        <td mat-cell *matCellDef="let row">{{ row.user_name }}</td>
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Titulo Post</th>
-        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.user_email }}</td>
       </ng-container>
 
       <!-- Fruit Column -->
-      <ng-container matColumnDef="fruit">
+      <ng-container matColumnDef="titulo_post">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Titulo Post</th>
+        <td mat-cell *matCellDef="let row">{{ row.post_title }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="contenido_post">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           Contenido Post
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.fruit }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.post_body }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
